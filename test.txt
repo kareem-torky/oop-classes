@@ -1,0 +1,29 @@
+get($key, $value)
+key => required
+value => optional 
+
+if key & value 
+    put value in this key 
+    return value
+
+if key only
+    return value
+
+
+Request class:
+1- get($key)
+2- post($key)
+3- server($key)
+4- serverAll()
+
+
+Session
+
+core 
+Core 
+
+core/admin 
+Core\Admin
+
+
+Db::table("cities")->select("")->where()->andWhere()->get();
