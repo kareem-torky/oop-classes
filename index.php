@@ -17,14 +17,26 @@ use Core\Db;
 
 // print_r($_SESSION);
 
-$db = new Db;
+$db = Db::getInstance();
 
 echo '<pre>';
 print_r( 
     $db->table("posts")
     ->select("id, title")
-    ->where("id", "<", 5)
-    ->andWhere("title", "like", "%what%")
-    ->get() 
+    ->where("id", "=", 5)
+    ->getOne() 
 );
 echo '</pre>';
+
+// $db2 = Db::getInstance();
+// $db3 = Db::getInstance();
+// $db4 = Db::getInstance();
+// $db5 = Db::getInstance();
+
+// oop 
+// class 
+// object
+
+// private __construct 
+
+// اعمل فانكشن ,وسيطة  خليها هى اللى تكريت الاوبجكت
