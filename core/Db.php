@@ -13,8 +13,6 @@ class Db
 
     private function __construct()
     {
-        echo "an object created";
-
         // Create connection
         $this->conn = new \mysqli("localhost", "root", "", "oop_classes");
 

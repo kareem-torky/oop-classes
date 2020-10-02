@@ -1,42 +1,27 @@
-<?php 
+<?php
 
-require_once "autoload.php";
-use Core\Request;
-use Core\Session;
-use Core\Db;
+// require_once "autoload.php";
 
+require_once "vendor/autoload.php";
 
-// $session = new Session;
-// $session->set("success", "this created successfully");
+use Core\Validation\Validator;
 
-// print_r($_SESSION);
-// echo "<br>";
+$req = [
+    [
+        'name' => 'name',
+        'value' => '',
+        'rules' => 'required|str'
+    ], 
 
-// echo $session->flash("success");
-// echo "<br>";
+    [
+        'name' => 'age',
+        'value' => "hello",
+        'rules' => 'required|numeric'
+    ], 
+];
 
-// print_r($_SESSION);
-
-$db = Db::getInstance();
+$errors = Validator::make($req);
 
 echo '<pre>';
-print_r( 
-    $db->table("posts")
-    ->select("id, title")
-    ->where("id", "=", 5)
-    ->getOne() 
-);
+print_r($errors);
 echo '</pre>';
-
-// $db2 = Db::getInstance();
-// $db3 = Db::getInstance();
-// $db4 = Db::getInstance();
-// $db5 = Db::getInstance();
-
-// oop 
-// class 
-// object
-
-// private __construct 
-
-// اعمل فانكشن ,وسيطة  خليها هى اللى تكريت الاوبجكت

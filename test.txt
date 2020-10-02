@@ -1,29 +1,12 @@
-get($key, $value)
-key => required
-value => optional 
+1- redirect all requests to public/index.php
+2- routing table
+3- check request --> render Controller@method
 
-if key & value 
-    put value in this key 
-    return value
+public file/folder --> 
+index.php
 
-if key only
-    return value
+oopclasses.local/
 
+oopclasses.local/index.php?posts/create
 
-Request class:
-1- get($key)
-2- post($key)
-3- server($key)
-4- serverAll()
-
-
-Session
-
-core 
-Core 
-
-core/admin 
-Core\Admin
-
-
-Db::table("cities")->select("")->where()->andWhere()->get();
+("posts/index", "PostController@index")
