@@ -1,12 +1,20 @@
-1- redirect all requests to public/index.php
-2- routing table
-3- check request --> render Controller@method
+insert into `posts` (`title`, `desc`) VALUES ('hello world', 'hes very nice')
 
-public file/folder --> 
-index.php
+php/laravel 
 
-oopclasses.local/
+routing -->controller 
 
-oopclasses.local/index.php?posts/create
+1- dynamic parameters
+2- views
+3- models
 
-("posts/index", "PostController@index")
+posts/index
+
+
+posts/index
+posts/show
+posts/create
+
+
+ثابتة  = 
+regexp بتحقق

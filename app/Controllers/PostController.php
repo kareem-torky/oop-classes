@@ -18,4 +18,9 @@ class PostController
     {
     
     }
+
+    public function show($id)
+    {
+        echo "this is post number $id";
+    }
 }

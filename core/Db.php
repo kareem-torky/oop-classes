@@ -40,7 +40,7 @@ class Db
 
     public function select(string $fields = "*")
     {
-        $this->query = "SELECT $fields FROM $this->table";
+        $this->query = "SELECT $fields FROM `$this->table`";
         return $this;
     }
 
@@ -98,5 +98,50 @@ class Db
         }
     }
 
-    // TODOS (insert, update, delete)
+    // TODOS (insert, update, delete) --> done
+    // real escape string and `` added
+
+    public function insert(array $data)
+    {
+        $keys = '';
+        $values = '';
+
+        foreach ($data as $key => $value) {
+            $keys .= "`$key`,";
+            $value = $this->conn->real_escape_string($value);
+            $values .= "'$value',";
+        }
+
+        $keys = substr($keys, 0, -1);
+        $values = substr($values, 0, -1);
+
+        $this->query = "INSERT INTO `$this->table` ($keys) VALUES ($values)";
+        return $this;
+    }
+
+    public function update(array $data)
+    {
+        $set = '';
+
+        foreach ($data as $key => $value) {
+            $value = $this->conn->real_escape_string($value);
+            $set .= "`$key` = '$value',";
+        }
+
+        $set = substr($set, 0, -1);
+
+        $this->query = "UPDATE `$this->table` SET $set";
+        return $this;
+    }
+
+    public function delete()
+    {
+        $this->query = "DELETE FROM `$this->table`";
+        return $this;
+    }
+
+    public function save()
+    {
+        return $this->conn->query($this->query);
+    }
 }

@@ -1,39 +1,10 @@
 <?php 
 
-interface SortInterface 
-{
-    public function perform();
-}
+require_once "vendor/autoload.php";
+$pattern = "/^posts\/show\/([\d]+)\/comments\/([\d]+)\/edit$/";
+$str = "posts/show/1/comments/2/edit";
 
-class BubbleSort implements SortInterface
-{
-    public function perform()
-    {
-        echo "bubble sort";
-    }
-}
+preg_match($pattern, $str, $matches);
 
-class InsertionSort implements SortInterface
-{
-    public function perform()
-    {
-        echo "insertion sort";
-    }
-}
-
-class MergeSort implements SortInterface
-{
-    public function perform()
-    {
-        echo "merge sort";
-    }
-}
-
-function makeSort(SortInterface $sortingMethod)
-{
-    $sortingMethod->perform();
-}
-
-makeSort(new BubbleSort);
-makeSort(new MergeSort);
-makeSort(new InsertionSort);
+$params = array_slice($matches, 1);
+print_r($params);

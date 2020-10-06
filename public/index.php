@@ -6,4 +6,8 @@ use Core\App;
 require_once "../vendor/autoload.php";
 require_once "../routes/web.php";
 
-$app = new App($route);
+// echo '<pre>';
+// print_r($route->getRoutingTable());
+// echo '</pre>';
+
+$app = new App;
