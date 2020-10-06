@@ -1,12 +1,17 @@
 <?php 
 
 namespace App\Controllers;
+use Core\View;
+use App\Models\Post;
 
 class PostController 
 {
     public function index()
     {
-        echo "hello from posts index";
+        // echo "hello from posts index";
+        $data['posts'] = Post::connectTable()->select()->get();
+
+        View::load("posts/index", $data);
     }
 
     public function create()

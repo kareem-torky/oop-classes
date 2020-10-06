@@ -1,20 +1,18 @@
-insert into `posts` (`title`, `desc`) VALUES ('hello world', 'hes very nice')
+authors 
 
-php/laravel 
+cats 
 
-routing -->controller 
-
-1- dynamic parameters
-2- views
-3- models
-
-posts/index
+books
+--------------------------- 
+users 
 
 
-posts/index
-posts/show
-posts/create
+admins 
+----------------------------
+order
 
 
-ثابتة  = 
-regexp بتحقق
+
+-----------------------------
+blog 
+courses 
